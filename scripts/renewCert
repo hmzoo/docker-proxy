@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+/usr/bin/certbot -q renew --renew-hook "/etc/init.d/nginx reload"
+
