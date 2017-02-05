@@ -1,6 +1,5 @@
 # do daily/weekly/monthly maintenance
 # min	hour	day	month	weekday	command
-*/1	*	*	*	*	/scripts/test
 22	2	*	*	*	/scripts/renewCert
 22	5	1	*	*	/scripts/cleanLogs
 

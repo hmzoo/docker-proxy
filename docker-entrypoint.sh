@@ -25,7 +25,7 @@ else
 		echo $LISTDOMAINS
 		echo $EMAIL
 		echo $TEST
-		certbot certonly --standalone $TEST --agree-tos $EMAIL -d $DOMAIN $LISTDOMAINS
+		certbot certonly --standalone --non-interactive  $TEST --agree-tos $EMAIL -d $DOMAIN $LISTDOMAINS
 
 	fi
 

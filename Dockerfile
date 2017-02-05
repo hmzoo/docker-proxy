@@ -2,17 +2,18 @@ FROM alpine:3.5
 
 # Environnment variables
 # root main domain
-ENV DOMAIN ""
+ENV DOMAIN= 
 # subdomains 
-ENV MOREDOMAINS ""
+ENV MOREDOMAINS= 
 # email for cert registration
-ENV EMAIL ""
+ENV EMAIL= 
 # diffie hellman key size
-ENV DH 2048
+ENV DH=2048
 # staging is false by default
-ENV TEST 0
+ENV TEST= 
 
 # packages needed
+
 RUN apk add --no-cache --update bash nginx openssl certbot
 # modified nginx.conf 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
