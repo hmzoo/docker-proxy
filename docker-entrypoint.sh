@@ -33,17 +33,9 @@ else
 		openssl dhparam -out /etc/letsencrypt/live/$DOMAIN/dhparam.pem $DH
 	fi
 
-	if [ ! -f /etc/nginx/ssl/params.conf ]; then
-		cp /templates/params.conf /etc/nginx/ssl
-	fi
-
-
-
-	ls -l /etc/periodic/daily
-	cp /scripts/renewCert /etc/periodic/daily
-	cp /scripts/cleanLogs /etc/periodic/monthly
-	rc-update add crond
-	rc-service crond start
+	crontab /scripts/crontab
+	crond
+	
 	nginx -g "daemon off;"
 
 fi
