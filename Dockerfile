@@ -20,8 +20,8 @@ COPY nginx/nginx.conf /etc/nginx/nginx.conf
 # needed for nginx pid
 RUN mkdir -p /run/nginx
 # forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+#RUN ln -sf /dev/stdout /var/log/nginx/access.log
+#RUN ln -sf /dev/stderr /var/log/nginx/error.log
 # create simple html root folder
 RUN mkdir -p /usr/share/nginx/html && touch /usr/share/nginx/html/index.html
 
@@ -37,7 +37,7 @@ EXPOSE 80 443
 #VOLUME /etc/nginx/conf.d
 #VOLUME /usr/share/nginx/html
 #VOLUME /etc/letsencrypt
-
+VOLUME /var/log/nginx
 # Entry point
 ADD docker-entrypoint.sh docker-entrypoint.sh
 RUN chmod +x docker-entrypoint.sh
