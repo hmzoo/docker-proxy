@@ -35,7 +35,7 @@ else
 
 	crontab /scripts/crontab
 	crond
-	/usr/bin/certbot -q renew --post-hook "nginx"
-	
+	/usr/bin/certbot -q renew 
+	/usr/sbin/nginx
 
 fi
