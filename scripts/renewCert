@@ -1,5 +1,5 @@
 #!/bin/sh
 
-/usr/bin/certbot -q renew --pre-hook "/etc/init.d/nginx stop" --post-hook "/etc/init.d/nginx start"
+/usr/bin/certbot -q renew --pre-hook "/usr/sbin/nginx stop" --post-hook "/usr/sbin/nginx start"
 #/usr/bin/certbot -q renew --renew-hook "/etc/init.d/nginx reload"
 
