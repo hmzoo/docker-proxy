@@ -35,7 +35,7 @@ else
 
 	crontab /scripts/crontab
 	crond
+	/usr/bin/certbot -q renew --post-hook "nginx"
 	
-	nginx -g "daemon off;"
 
 fi
